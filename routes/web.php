@@ -8,6 +8,7 @@ use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\SaveData;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,3 +76,6 @@ Route::get('edit/{id}', [MemberController::class, 'editData']);
 Route::post('edit', [MemberController::class, 'update']);
 // DBoperation route
 // Route::get('dbop', [MemberController::class, 'dbOperation']);
+
+// Query builder (students route)
+Route::get('studentList', [StudentController::class, 'studentData']);
