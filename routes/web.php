@@ -35,7 +35,7 @@ Route::post('user_auth', [UserAuth::class, 'userLogin']);
 // Route::view('login', 'login');
 Route::view('profile', 'profile');
 
-// If user is still logged in, then redirect user to profile page 
+// If user is still logged in, then redirect user to profile page
 Route::get('/login', function () {
     if(session()->has('user'))
     {
@@ -61,8 +61,17 @@ Route::view('add', 'add');
 Route::view('upload', 'upload');
 Route::post('uploadManager', [UploadController::class, 'uploadManager']);
 
-Route::get('list', [MemberController::class, 'show']);
+// For show data from database
+Route::get('list', [MemberController::class, 'showList']);
 
 
 Route::view('saveData', 'saveData');
 Route::post('saveData', [SaveData::class,'addDataToSave']);
+
+// Route for delete data from list
+Route::get('delete/{id}', [MemberController::class, 'delete']);
+// Edit route
+Route::get('edit/{id}', [MemberController::class, 'editData']);
+Route::post('edit', [MemberController::class, 'update']);
+// DBoperation route
+// Route::get('dbop', [MemberController::class, 'dbOperation']);
