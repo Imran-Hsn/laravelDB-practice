@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddMember;
 use App\Http\Controllers\dataController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UserController;
@@ -79,3 +80,8 @@ Route::post('edit', [MemberController::class, 'update']);
 
 // Query builder (students route)
 Route::get('studentList', [StudentController::class, 'studentData']);
+
+Route::get('employee', [EmployeeController::class, 'show']);
+
+// Accessor route
+Route::get('accessor', [StudentController::class, 'studentData']);
