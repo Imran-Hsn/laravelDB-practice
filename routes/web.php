@@ -8,6 +8,7 @@ use App\Http\Controllers\UploadController;
 use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\OneToOneController;
 use App\Http\Controllers\SaveData;
 use App\Http\Controllers\StudentController;
 
@@ -85,3 +86,6 @@ Route::get('employee', [EmployeeController::class, 'show']);
 
 // Accessor route
 Route::get('accessor', [StudentController::class, 'studentData']);
+
+// One to one route
+Route::get('oto', [OneToOneController::class, 'oneToOne']);

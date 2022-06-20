@@ -9,4 +9,8 @@ class employee extends Model
 {
     use HasFactory;
     public $timestamps=false;
+
+    public function getCompany() {
+        return $this->hasOne('App\Models\Company');
+    }
 }

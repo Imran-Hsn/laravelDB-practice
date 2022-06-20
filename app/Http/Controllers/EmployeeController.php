@@ -8,9 +8,18 @@ use Illuminate\Support\Facades\DB;
 class EmployeeController extends Controller
 {
     function show() {
-        return DB::table('employees')
-        ->join('company', 'employees.id', "=" , 'company.employee_id')
-        ->where('employees.id', 3)
+        // return DB::table('employees')
+        // ->join('company', 'employees.id', "=" , 'company.employee_id')
+        // ->where('employees.id', 3)
+        // ->get();
+
+        $joinedData = DB::table('employees')
+        ->join('company', 'employees.id', '=', 'company.employee_id')
+        ->where('employees.id', 2)
         ->get();
+
+        return view('viewJoin', ['joined'=>$joinedData]);
+
+
     }
 }
