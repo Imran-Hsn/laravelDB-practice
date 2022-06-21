@@ -9,8 +9,12 @@ use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\OneToOneController;
+use App\Http\Controllers\RouteModelBindingController;
 use App\Http\Controllers\SaveData;
 use App\Http\Controllers\StudentController;
+use DeepCopy\Filter\ReplaceFilter;
+
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,3 +93,19 @@ Route::get('accessor', [StudentController::class, 'studentData']);
 
 // One to one route
 Route::get('oto', [OneToOneController::class, 'oneToOne']);
+
+
+// echo "<h1>Hello Laravel</h1>";
+// $wave = 'Hi there';
+// $msg = "Let's learn laravel and my s q l";
+// $upper = lcfirst($wave);
+
+// $data = Str::replaceFirst('Hi', 'Hello', $wave);
+// $msg_camel = Str::camel($msg);
+// $msg_snake = Str::snake($msg);
+// echo $data . "<br/>";
+// echo $msg_camel .'<br/> '. $msg_snake;
+
+
+//Route Model Binding 
+Route::get('employee/{key}',[RouteModelBindingController::class, 'RouteModel']);

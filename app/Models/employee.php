@@ -11,6 +11,7 @@ class employee extends Model
     public $timestamps=false;
 
     public function getCompany() {
-        return $this->hasOne('App\Models\Company');
+        // return $this->hasOne('App\Models\Company');
+        return $this->hasMany('App\Models\Company');
     }
 }
